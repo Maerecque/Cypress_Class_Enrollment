@@ -1,0 +1,22 @@
+name: Register for classes
+on:
+  push:
+    branches: ['master']
+  schedule:
+    - cron: '1 0 * * *'
+env:
+  CYPRESS_USERNAME: ${{ secrets.USERNAME }}
+  CYPRESS_PASSWORD: ${{ secrets.PASSWORD }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
