@@ -17,7 +17,7 @@ context('Create a reservation', () => {
         cy.get('#edit-pass').type(Cypress.env('PASSWORD'));
         cy.get('#edit-submit--2').click();
     });
-    it('Should make monday reservation', () => {
+    it('Should make Low HIIT monday reservation', () => {
         cy.get('.view_row_block').contains('maandag').as('monday');
         cy.get('@monday').click();
         cy.get('@monday').parent().find('.node__content').as('mondayLessons')
@@ -47,7 +47,7 @@ context('Create a reservation', () => {
         cy.get('@submitButton').should('have.value', 'Deelnemen');
         cy.get('@submitButton').click({ force: true });
     });
-    it('Should make sunday reservation', () => {
+    it('Should make BodyPump sunday reservation', () => {
         cy.get('.view_row_block').contains('zondag').as('sunday');
         cy.get('@sunday').click();
         cy.get('@sunday').parent().find('.node__content').as('sundayLessons')
