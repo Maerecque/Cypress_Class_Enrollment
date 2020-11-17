@@ -3,7 +3,7 @@ on:
   push:
     branches: ['master']
   schedule:
-#     - cron: '0 80 * 9 *'
+    - cron: '0 18 * * *'
 env:
   CYPRESS_USERNAME: ${{ secrets.USERNAME }}
   CYPRESS_PASSWORD: ${{ secrets.PASSWORD }}
